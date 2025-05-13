@@ -1,0 +1,212 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+  --vt-c-white: #cd0000;
+  --vt-c-white-soft: #0800ff;
+  --vt-c-white-mute: #1eff00;
+
+  --vt-c-black11: #EEEDEC;
+  /*my blanco */
+  --vt-c-black-soft: #00ff44;
+  --vt-c-black-mute: #00ff2f;
+
+  --vt-c-indigo: #b08c38;
+
+  --vt-c-divider-light-1: rgb(0, 0, 0);
+  --vt-c-divider-light-2: rgba(17, 255, 0);
+  --vt-c-divider-dark-1: rgba(194, 29, 29);
+  --vt-c-divider-dark-2: rgba(255, 17, 17);
+
+  --vt-c-text-light-1: rgb(38, 255, 0);
+  ;
+  --vt-c-text-light-2: rgba(0, 255, 76);
+  --vt-c-text-dark-1: var(--vt-c-white);
+  --vt-c-text-dark-2: #242424;
+}
+
+/* semantic color variables for this project */
+:root {
+  --color-background: var(--vt-c-white);
+  --color-background-soft: var(--vt-c-white-soft);
+  --color-background-mute: var(--vt-c-white-mute);
+
+  --color-border: var(--vt-c-divider-light-2);
+  --color-border-hover: var(--vt-c-divider-light-1);
+
+  --color-heading: var(--vt-c-text-light-1);
+  --color-text: var(--vt-c-text-light-1);
+
+  --section-gap: 160px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: var(--vt-c-black11);
+    --color-background-soft: var(--vt-c-black-soft);
+    --color-background-mute: var(--vt-c-black-mute);
+
+    --color-border: var(--vt-c-divider-dark-2);
+    --color-border-hover: var(--vt-c-divider-dark-1);
+
+    --color-heading: var(--vt-c-text-dark-1);
+    --color-text: var(--vt-c-text-dark-2);
+  }
+}
+
+*/ *,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: normal;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--color-text);
+  background: var(--color-background);
+  transition:
+    color 0.5s,
+    background-color 0.5s;
+  line-height: 1.6;
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    'Fira Sans',
+    'Droid Sans',
+    'Helvetica Neue',
+    sans-serif;
+  font-size: 15px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/*animaciones */
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+
+
+
+:root {
+  font-family: 'Inter', sans-serif;
+}
+
+.chat-bubble {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out, transform 2s ease-out;
+  cursor: pointer;
+}
+
+.chat-bubble:hover {
+  transform: scale(1.5);
+}
+
+.fade-slide-enter-active,
+.fade-slide-leave-active {
+  transition: all 0.4s ease;
+}
+
+.fade-slide-enter-from {
+  opacity: 0;
+  transform: translateY(-20px) scale(0.95);
+}
+
+.fade-slide-enter-to {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.fade-slide-leave-from {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.fade-slide-leave-to {
+  opacity: 0;
+  transform: translateY(-20px) scale(0.95);
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 25s linear infinite;
+}
+
+
+@keyframes fall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+
+  30% {
+    transform: translateY(20px) rotate(10deg);
+  }
+
+  60% {
+    transform: translateY(100px) rotate(25deg);
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: translateY(300px) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+.animate-fall {
+  animation: fall 0.8s ease-in forwards;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+    /* Puedes ajustar este valor */
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.animate-float {
+  animation: float 2s ease-in-out infinite;
+}
+
+@keyframes card-fall {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+}
+
+.animate-card-fall {
+  animation: card-fall 0.8s ease forwards;
+}
