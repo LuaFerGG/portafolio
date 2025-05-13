@@ -148,7 +148,7 @@
           transition: 'opacity 0.6s ease-in-out'
            }"
           @animationend="handleAnimationEnd">
-          <h1 class="font-bold text-6xl sm:text-5xl text-[#242424] leading-tight">
+          <h1 class="font-bold text-4xl lg:text-6xl text-[#242424] leading-tight">
               Bringing Vision to Life,<br>One Pixel at a Time
           </h1>
           </div>
@@ -159,7 +159,7 @@
           transition: 'opacity 0.6s ease-in-out'
            }"
           @animationend="handleAnimationEnd">
-          <div class="absolute right-[905px] top-[3px] bg-[#242424] text-[#fafafa] rotate-[6deg] text-sm px-2 py-2 z-50 opacity-0 cursor-pointer hover:opacity-100 transition-opacity duration-300 ease-in-out">Don't touch</div>
+          <div class="absolute left top-[3px] bg-[#242424] text-[#fafafa] rotate-[6deg] text-sm px-2 py-2 z-50 opacity-0 cursor-pointer hover:opacity-100 transition-opacity duration-300 ease-in-out">Don't touch</div>
           <div class="absolute w-full border-t border-[#d9d9d9]"></div>
         <div @click="handleFall"
           :class="['bg-[#FAFAFA] text-[#242424] rounded-full font-bold text-lg max-w-[150px] px-10 py-2 z-40 shadow-md',falling ? 
@@ -180,7 +180,7 @@
           @animationend="handleAnimationEnd">
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-20 pb-18">
         <!-- --------------------------------------first card--------------------------------- -->
-        <div class="p-8 text-left max-w-[250px]">
+        <div class="p-8 text-left max-w-[250px] order-2">
           <div class="">
             <img src="/icons/icon_dev1.svg" alt="" class="w-[50px] py-4"/>
           </div>
@@ -188,7 +188,7 @@
           <p class="text-md">Bringing your projects to life with a mix of creativity and innovation, always aiming for something functional and fun.</p>
           </div>
           <!-- --------------------------------------second card--------------------------------- -->
-        <div class="p-8 text-left max-w-[250px]">
+        <div class="p-8 text-left max-w-[250px]  order-1">
           <div class="">
             <img src="/icons/icon_design.svg" alt="" class="w-[50px] py-4"/>
           </div>
@@ -484,7 +484,7 @@ const handleHover = () => {
     isHovering.value = true;
 
     const bubble = document.querySelector('.chat-bubble');
-    bubble.style.transition = 'transform 2s ease-out';
+    bubble.style.transition = 'transform 1.5s ease-out';
     bubble.style.transform = 'scale(1.5)';
 
     hoverTimeout = setTimeout(() => {
@@ -497,8 +497,8 @@ const handleHover = () => {
         bubble.style.opacity = 1;
         bubble.style.transform = 'scale(1)';
         isHovering.value = false;
-      }, 1500);
-    }, 1500);
+      }, 700);
+    }, 300);
   }
 };
 
