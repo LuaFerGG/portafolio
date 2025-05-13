@@ -1,58 +1,78 @@
 <template>
-<header class="bg-[#e3e3e3] pt-[40px] pl-4 pr-4 lg:pl-20 lg:pr-20 z-10 transition-[padding] duration-300 ease-in-out">
-    <div class="flex items-center justify-between p-4 text-[#868686]">
-      <div class="flex items-center space-x-4 font-semibold">
-        <span class="hidden sm:inline" v-show="!isMobile">luafergg@gmail.com</span>
+<header class="bg-[#e3e3e3] pt-[10px] sm:pt-[40px] pl-4 pr-4 lg:pl-20 lg:pr-20 z-10 transition-[padding] duration-300 ease-in-out">
+  <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 sm:gap-0 p-4 text-[#868686]">
+    
+    <!-- Grupo: Email + Botones -->
+    <div class="flex flex-row justify-center sm:justify-start items-center space-x-3 sm:space-x-4 font-semibold order-1 sm:order-none">
+      <span class="hidden sm:inline" v-show="!isMobile">luafergg@gmail.com</span>
 
-        <!-- Botón Copiar -->
-        <button
-          @click="copyToClipboard"
-          class="bg-white shadow-sm w-[100px] px-4 py-1 rounded-full hover:bg-[#242424] hover:text-white transition">
-          {{isMobile ? 'E-mail' : 'Copy'}}
-        </button>
+      <!-- Botón Copiar -->
+      <button
+        @click="copyToClipboard"
+        class="bg-white shadow-sm w-[80px] sm:w-[100px] px-2 sm:px-4 py-1 rounded-full hover:bg-[#242424] hover:text-white transition text-center text-sm sm:text-base">
+        {{ isMobile ? 'E-mail' : 'Copy' }}
+      </button>
 
-        <!-- Botón CV -->
-        <a
-          href="https://drive.google.com/file/d/14ONub5qdbXsatwyGjADjbIdWKlNV_r-l/view"
-          target="_blank"
-          class="bg-white shadow-sm w-[100px] px-4 py-1 rounded-full hover:bg-[#242424] hover:text-white transition inline-block text-center">
-          CV
-        </a>
-      </div>
-      <div class="flex items-center space-x-4 text-[#868686]">
-        <a 
-          href="https://www.linkedin.com/in/lua-ackermann-18014a355/"
-          target="_blank"
-          class="social-link hover:underline hover:text-[#242424] hover:font-bold decoration-[#242424] transition flex items-center space-x-0">
-          <img 
-            src="/icons/icon_linkedin.svg"
-            alt="LinkedIn"
-            class="bg-white p-2 rounded-full w-9  inline-block lg:hidden" />
-          <span class="hidden lg:inline-block">LinkedIn</span>
-        </a>
-        <span class="hidden lg:inline">/</span>
-        <a href="https://www.behance.net/laferackerma1"
-          target="_blank"
-          class="social-link hover:underline hover:text-[#242424] hover:font-bold decoration-[#242424] transition">
-          <img
-            src="/icons/icon_behance.svg"
-            alt="Behance"
-            class="bg-white p-2 rounded-full w-9 inline-block lg:hidden" />
-          <span class="hidden lg:inline-block">Behance</span>
-        </a>
-        <span class="hidden lg:inline">/</span>
-        <a href="https://fireweb.digiapps.com.co"
-          target="_blank"
-          class="social-link hover:underline hover:text-[#242424] hover:font-bold decoration-[#242424] transition">
-          <img
-            src="/icons/icon_fireweb.svg"
-            alt="Fireweb"
-            class="bg-white p-2 rounded-full w-9 inline-block lg:hidden" />
-            <span class="hidden lg:inline-block">Fireweb</span>
-        </a>
-      </div>
+      <!-- Botón CV -->
+      <a
+        href="https://drive.google.com/file/d/14ONub5qdbXsatwyGjADjbIdWKlNV_r-l/view"
+        target="_blank"
+        class="bg-white shadow-sm w-[80px] sm:w-[100px] px-2 sm:px-4 py-1 rounded-full hover:bg-[#242424] hover:text-white transition inline-block text-center text-sm sm:text-base">
+        CV
+      </a>
     </div>
-  </header>
+
+<div class="flex justify-center sm:justify-end items-center flex-wrap gap-6 sm:gap-4 text-[#868686] order-2 sm:order-none">
+  <!-- LinkedIn (solo en móvil) -->
+  <a 
+    href="https://www.linkedin.com/in/lua-ackermann-18014a355/"
+    target="_blank"
+    class="social-link hover:underline hover:text-[#242424] hover:font-bold decoration-[#242424] transition flex items-center space-x-0 md:hidden">
+    <img 
+      src="/icons/icon_linkedin.svg"
+      alt="LinkedIn"
+      class="bg-white p-2 ml-3 rounded-full w-9 inline-block" />
+  </a>
+  <!-- Nombre de LinkedIn en escritorio -->
+  <span class="lg:inline-block md:inline-block hidden hover:underline hover:text-[#242424] hover:font-bold decoration-[#242424] transition">LinkedIn</span>
+
+  <span class="hidden md:inline-block lg:inline">/</span>
+
+  <!-- Behance (solo en móvil) -->
+  <a 
+    href="https://www.behance.net/laferackerma1"
+    target="_blank"
+    class="social-link hover:underline hover:text-[#242424] hover:font-bold decoration-[#242424] transition flex items-center md:hidden">
+    <img
+      src="/icons/icon_behance.svg"
+      alt="Behance"
+      class="bg-white p-2 rounded-full w-9 inline-block" />
+  </a>
+  <!-- Nombre de Behance en escritorio -->
+  <span class="lg:inline-block md:inline-block hidden hover:underline hover:text-[#242424] hover:font-bold decoration-[#242424] transition">Behance</span>
+
+  <span class="hidden md:inline-block  lg:inline">/</span>
+
+  <!-- Fireweb (solo en móvil) -->
+  <a 
+    href="https://fireweb.digiapps.com.co"
+    target="_blank"
+    class="social-link hover:underline hover:text-[#242424] hover:font-bold decoration-[#242424] transition flex items-center md:hidden">
+    <img
+      src="/icons/icon_fireweb.svg"
+      alt="Fireweb"
+      class="bg-white p-2 rounded-full w-9 inline-block" />
+  </a>
+  <!-- Nombre de Fireweb en escritorio -->
+  <span class="lg:inline-block hidden  md:inline-block hover:underline hover:text-[#242424] hover:font-bold decoration-[#242424] transition">Fireweb</span>
+</div>
+
+  </div>
+</header>
+
+
+
+
 
   <!-- Notificación con animación de entrada y salida -->
   <transition name="fade-slide">
@@ -64,30 +84,34 @@
   </transition>
 
   <main class="bg-[#EEEDEC] h-screen"> <!--fondo- fondo-->
-  <div class="bg-[#e3e3e3] py-12 rounded-b-[60px] shadow-[0_4px_2px_-1px_#D9D9D9]">
-    <div class="flex justify-center items-start pt-[45px]">
+<div class="bg-[#e3e3e3] py-6 lg:py-12 rounded-b-[60px] shadow-[0_4px_2px_-1px_#D9D9D9]">
+    <div class="flex justify-center items-start pt-[40px]">
       <div class="relative">
         <img src="/foto.png" alt="Foto de perfil" class="w-[150px] rounded-full border-[6px] border-white shadow-lg object-cover"/>
 
         <!-- Burbuja de chat encima de la imagen -->
-        <div class="absolute -top-8 left-[60%] bg-white px-4 py-2 whitespace-nowrap rounded-3xl shadow-md text-sm text-[#242424] font-bold chat-bubble transition-all"
-          @mouseover="handleHover" @mouseleave="handleLeave">
-          {{ bubbleText }}
+<div class="absolute -top-10 left-1/2 sm:left-[60%] -translate-x-1/2 sm:translate-x-0 bg-white px-4 py-2 whitespace-nowrap rounded-3xl shadow-md text-sm text-[#242424] font-bold chat-bubble transition-all"
+  @mouseover="handleHover" @mouseleave="handleLeave">
+  {{ bubbleText }}
 
-          <!-- Puntita de la burbuja -->
-          <div class="absolute bottom-0 left-5 w-0 h-0 border-l-[10px] border-l-transparent
-          border-r-[10px] border-r-transparent border-t-[10px] border-t-white translate-y-full"></div>
-        </div>
+  <!-- Puntita de la burbuja -->
+  <div class="absolute bottom-0 left-5 w-0 h-0 border-l-[10px] border-l-transparent
+  border-r-[10px] border-r-transparent border-t-[10px] border-t-white translate-y-full"></div>
+</div>
       </div>
     </div>
 
     <!-- Texto y titulo -->
     <section class=" flex flex-col justify-center items-center text-center py-6 px-4">
       <div class="">
-<h1 class="font-bold text-6xl text-[#242424]">Heart in digital<br />
-  <span class="inline-block text-6xl font-bold text-[#868686]">brands, products,impact</span>
-  <br/> and experience..
+<h1 class="font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#242424] leading-tight">
+  Heart in digital<br />
+  <span class="inline-block text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#868686]">
+    brands, products, impact
+  </span>
+  <br />and experience..
 </h1>
+
 
 <a href="https://www.behance.net/laferackerma1" target="_blank" rel="noopener noreferrer">
   <button 
@@ -124,7 +148,7 @@
           transition: 'opacity 0.6s ease-in-out'
            }"
           @animationend="handleAnimationEnd">
-          <h1 class="font-bold text-6xl text-[#242424] leading-tight">
+          <h1 class="font-bold text-6xl sm:text-5xl text-[#242424] leading-tight">
               Bringing Vision to Life,<br>One Pixel at a Time
           </h1>
           </div>
@@ -192,7 +216,7 @@
       </div>
     </section>
 <section>
-  <div class="bg-[#e3e3e3] w-full flex flex-col justify-center items-center text-center pt-20 border-t border-[#d9d9d9] rounded-b-[60px] pb-20 shadow-[0_4px_3px_-1px_#D9D9D9] relative overflow-hidden">   
+  <div class="bg-[#e3e3e3] w-full flex flex-col justify-center items-center text-center pt-[160px] border-t border-[#d9d9d9] rounded-b-[60px] pb-20 shadow-[0_4px_3px_-1px_#D9D9D9] relative overflow-hidden">   
     <div class="relative">
       <img src="/foto.png" alt="Fer, diseñadora gráfica" class="w-[150px] rounded-full border-[6px] border-white shadow-lg object-cover"/>
 
@@ -259,10 +283,11 @@
 
     <!-- Burbuja siempre visible -->
 <div
-  class="absolute right-[-210px] top-[-150px] bg-white text-[#242424] font-bold text-sm px-4 py-2 rounded-xl shadow-md max-w-[400px] min-h-[20px] transition-all duration-500 ease-in-ou"
+  class="absolute top-[-220px] right-1/2 sm:right-[-150px] translate-x-1/2 sm:translate-x-0 bg-white text-[#242424] font-bold text-sm px-4 py-2 rounded-xl shadow-md max-w-[400px] min-h-[20px] transition-all duration-500 ease-in-out"
 >
   <!-- Triángulo tipo "cola" -->
-  <div class="absolute -left-2 top-3 w-0 h-0 border-y-8 border-y-transparent border-r-8 border-r-white"></div>
+  <div class="absolute bottom-0 left-5 w-0 h-0 border-l-[10px] border-l-transparent
+  border-r-[10px] border-r-transparent border-t-[10px] border-t-white translate-y-full"></div>
   {{ poemaActual }}
 </div>
       <!-- Título principal -->
