@@ -90,14 +90,18 @@
         <img src="/foto.png" alt="Foto de perfil" class="w-[150px] rounded-full border-[6px] border-white shadow-lg object-cover"/>
 
         <!-- Burbuja de chat encima de la imagen -->
-<div class="absolute -top-10 left-1/2 sm:left-[60%] -translate-x-1/2 sm:translate-x-0 bg-white px-4 py-2 whitespace-nowrap rounded-3xl shadow-md text-sm text-[#242424] font-bold chat-bubble transition-all"
-  @mouseover="handleHover" @mouseleave="handleLeave">
+<div
+  class="absolute -top-10 left-1/2 sm:left-[60%] translate-x-[-50%] sm:translate-x-0 bg-white px-4 py-2 whitespace-nowrap rounded-3xl shadow-md text-sm text-[#242424] font-bold chat-bubble transition-all"
+  @mouseover="handleHover"
+  @mouseleave="handleLeave"
+>
   {{ bubbleText }}
 
   <!-- Puntita de la burbuja -->
   <div class="absolute bottom-0 left-5 w-0 h-0 border-l-[10px] border-l-transparent
-  border-r-[10px] border-r-transparent border-t-[10px] border-t-white translate-y-full"></div>
+    border-r-[10px] border-r-transparent border-t-[10px] border-t-white translate-y-full"></div>
 </div>
+
       </div>
     </div>
 
