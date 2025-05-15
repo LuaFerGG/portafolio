@@ -367,7 +367,7 @@ import confetti from 'canvas-confetti';
 import { ref, nextTick, onMounted } from 'vue';
 import gsap from 'gsap';
 import { useI18n } from 'vue-i18n';
-import CircularDropdown from './components/CircularDropdown.vue';
+
 
 
 const isMobile = ref(false)
