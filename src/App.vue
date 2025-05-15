@@ -352,10 +352,6 @@
     
   </div>
 
-  <!---<section class="flex col justify-center gap-20 h-[900px]">
-  <div class="flex justify-center items-center ">
-    <CircularDropdown /></div>
-  </section> -->
 </footer>
 
   </main>
