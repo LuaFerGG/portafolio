@@ -1,5 +1,5 @@
 <template>
-<header class="bg-[#e3e3e3] pt-[10px] sm:pt-[40px] pl-4 pr-4 lg:pl-20 lg:pr-20 z-10 transition-[padding] duration-300 ease-in-out">
+<header class="bg-[#E3E3E3] pt-[10px] sm:pt-[40px] pl-4 pr-4 lg:pl-20 lg:pr-20 z-10 transition-[padding] duration-300 ease-in-out">
   <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 sm:gap-0 p-4 text-[#868686]">
     
     <!-- Grupo: Email + Botones -->
@@ -9,7 +9,7 @@
       <!-- Botón Copiar -->
       <button
         @click="copyToClipboard"
-        class="bg-white shadow-sm w-[80px] sm:w-[100px] px-2 sm:px-4 py-1 rounded-full hover:bg-[#242424] hover:text-white transition text-center text-sm sm:text-base">
+        class="bg-[#FFFFFF] shadow-sm w-[80px] sm:w-[100px] px-2 sm:px-4 py-1 rounded-full hover:bg-[#242424] hover:text-light00 transition text-center text-sm sm:text-base">
         {{ isMobile ? 'E-mail' : 'Copy' }}
       </button>
 
@@ -17,7 +17,7 @@
       <a
         href="https://drive.google.com/file/d/14ONub5qdbXsatwyGjADjbIdWKlNV_r-l/view"
         target="_blank"
-        class="bg-white shadow-sm w-[80px] sm:w-[100px] px-2 sm:px-4 py-1 rounded-full hover:bg-[#242424] hover:text-white transition inline-block text-center text-sm sm:text-base">
+        class="bg-[#FFFFFF] shadow-sm w-[80px] sm:w-[100px] px-2 sm:px-4 py-1 rounded-full hover:bg-[#242424] hover:text-[#FFFFFF] transition inline-block text-center text-sm sm:text-base">
         CV
       </a>
     </div>
@@ -31,7 +31,7 @@
     <img 
       src="/icons/icon_linkedin.svg"
       alt="LinkedIn"
-      class="bg-white p-2 ml-3 rounded-full w-9 inline-block" />
+      class="bg-[#FFFFFF] p-2 ml-3 rounded-full w-9 inline-block" />
   </a>
   <!-- Nombre de LinkedIn en escritorio -->
   <span class="lg:inline-block md:inline-block hidden hover:underline hover:text-[#242424] hover:font-bold decoration-[#242424] transition">LinkedIn</span>
@@ -46,7 +46,7 @@
     <img
       src="/icons/icon_behance.svg"
       alt="Behance"
-      class="bg-white p-2 rounded-full w-9 inline-block" />
+      class="bg-[#FFFFFF] p-2 rounded-full w-9 inline-block" />
   </a>
   <!-- Nombre de Behance en escritorio -->
   <span class="lg:inline-block md:inline-block hidden hover:underline hover:text-[#242424] hover:font-bold decoration-[#242424] transition">Behance</span>
@@ -61,7 +61,7 @@
     <img
       src="/icons/icon_fireweb.svg"
       alt="Fireweb"
-      class="bg-white p-2 rounded-full w-9 inline-block" />
+      class="bg-[#FFFFFF] p-2 rounded-full w-9 inline-block" />
   </a>
   <!-- Nombre de Fireweb en escritorio -->
   <span class="lg:inline-block hidden  md:inline-block hover:underline hover:text-[#242424] hover:font-bold decoration-[#242424] transition">Fireweb</span>
@@ -70,28 +70,24 @@
   </div>
 </header>
 
-
-
-
-
   <!-- Notificación con animación de entrada y salida -->
   <transition name="fade-slide">
     <div
       v-if="copied"
-      class="fixed top-4 left-[253px] bg-[#242424] text-white px-4 py-1 rounded-full shadow-sm z-50">
+      class="fixed top-4 left-[253px] bg-[#242424] text-[#FFFFFF] px-4 py-1 rounded-full shadow-sm z-50">
       ¡Copiado!
     </div>
   </transition>
 
   <main class="bg-[#EEEDEC] h-screen"> <!--fondo- fondo-->
-<div class="bg-[#e3e3e3] py-6 lg:py-12 rounded-b-[60px] shadow-[0_4px_2px_-1px_#D9D9D9]">
+<div class="bg-[#E3E3E3] py-6 lg:py-12 rounded-b-[60px] shadow-[0_4px_2px_-1px_#D9D9D9]">
     <div class="flex justify-center items-start pt-[40px]">
       <div class="relative">
-        <img src="/foto.png" alt="Foto de perfil" class="w-[150px] rounded-full border-[6px] border-white shadow-lg object-cover"/>
+        <img src="/foto.png" alt="Foto de perfil" class="w-[150px] rounded-full border-[6px] border-[#FFFFFF] shadow-lg object-cover"/>
 
         <!-- Burbuja de chat encima de la imagen -->
 <div
-  class="absolute -top-10 left-1/2 sm:left-[60%] translate-x-[-50%] sm:translate-x-0 bg-white px-4 py-2 whitespace-nowrap rounded-3xl shadow-md text-sm text-[#242424] font-bold chat-bubble transition-all"
+  class="absolute -top-10 left-1/2 sm:left-[60%] translate-x-[-50%] sm:translate-x-0 bg-[#FFFFFF] px-4 py-2 whitespace-nowrap rounded-3xl shadow-md text-sm text-[#242424] font-bold chat-bubble transition-all"
   @mouseover="handleHover"
   @mouseleave="handleLeave"
 >
@@ -99,7 +95,7 @@
 
   <!-- Puntita de la burbuja -->
   <div class="absolute bottom-0 left-5 w-0 h-0 border-l-[10px] border-l-transparent
-    border-r-[10px] border-r-transparent border-t-[10px] border-t-white translate-y-full"></div>
+    border-r-[10px] border-r-transparent border-t-[10px] border-t-[#FFFFFF] translate-y-full"></div>
 </div>
 
       </div>
@@ -119,7 +115,7 @@
 
 <a href="https://www.behance.net/laferackerma1" target="_blank" rel="noopener noreferrer">
   <button 
-    class="mt-[60px] mb-3 bg-[#242424] text-white shadow-md font-semibold text-md px-8 py-4
+    class="mt-[60px] mb-3 bg-[#242424] text-[#FFFFFF] shadow-md font-semibold text-md px-8 py-4
       rounded-full flex items-center gap-2 transition-transform mx-auto hover:scale-105 transition">
     Latest Shots
   </button>
@@ -143,7 +139,7 @@
       </div>
     </section>
      
-    <section class="bg-[#e3e3e3] w-full rounded-t-[60px] flex flex-col justify-center items-center text-center py-16 shadow-[0_-4px_2px_-1px_#D9D9D9]">
+    <section class="bg-[#E3E3E3] w-full rounded-t-[60px] flex flex-col justify-center items-center text-center py-16 shadow-[0_-4px_2px_-1px_#D9D9D9]">
       <div class="w-full flex flex-col items-center text-center content-center pt-16">
               <div @click="handleFall"
           :class="['',falling? 'animate-fall pointer-events-none' :'']"
@@ -163,10 +159,11 @@
           transition: 'opacity 0.6s ease-in-out'
            }"
           @animationend="handleAnimationEnd">
-          <div class="absolute left top-[3px] bg-[#242424] text-[#fafafa] rotate-[6deg] text-sm px-2 py-2 z-50 opacity-0 cursor-pointer hover:opacity-100 transition-opacity duration-300 ease-in-out">Don't touch</div>
+          <div class="absolute left top-[3px] bg-[#242424]
+          text-[#FFFFFF] rotate-[6deg] text-sm px-2 py-2 z-50 opacity-0 cursor-pointer hover:opacity-100 transition-opacity duration-300 ease-in-out">Don't touch</div>
           <div class="absolute w-full border-t border-[#d9d9d9]"></div>
         <div @click="handleFall"
-          :class="['bg-[#FAFAFA] text-[#242424] rounded-full font-bold text-lg max-w-[150px] px-10 py-2 z-40 shadow-md',falling ? 
+          :class="['bg-[#FFFFFF] text-[#242424] rounded-full font-bold text-lg max-w-[150px] px-10 py-2 z-40 shadow-md',falling ? 
           'animate-fall pointer-events-none' :'']"
           :style="{ visibility: showButton ? 'visible' : 'hidden',
           opacity: showButton ? 1 : 0,
@@ -219,100 +216,108 @@
         </div>
       </div>
     </section>
-<section>
-  <div class="bg-[#e3e3e3] w-full flex flex-col justify-center items-center text-center pt-[160px] border-t border-[#d9d9d9] rounded-b-[60px] pb-20 shadow-[0_4px_3px_-1px_#D9D9D9] relative overflow-hidden">   
-    <div class="relative">
-      <img src="/foto.png" alt="Fer, diseñadora gráfica" class="w-[150px] rounded-full border-[6px] border-white shadow-lg object-cover"/>
+    <section>
+      <div class="bg-[#E3E3E3] w-full flex flex-col justify-center items-center text-center pt-[160px] border-t border-[#d9d9d9] rounded-b-[60px] pb-20 shadow-[0_4px_3px_-1px_#D9D9D9] relative overflow-visible">   
+        <div class="relative z-[100]">
+          <img src="/foto.png" alt="Fer, diseñadora gráfica" class="w-[150px] rounded-full border-[6px] border-[#FFFFFF] shadow-lg object-cover"/>
 
-      <img src="/icons/star.svg" class="absolute left-[-650px] top-[0px] w-8 opacity-10"alt="Luna" />
-      <img src="/icons/star.svg" class="absolute left-[-220px] top-[45px] w-7 opacity-10"alt="Luna" />
-      <img src="/icons/star.svg" class="absolute left-[-400px] top-[50px] w-6 opacity-10"alt="Luna" />
-      <img src="/icons/star.svg" class="absolute left-[-500px] top-[10px] w-5 opacity-10"alt="Luna" />
-      <img src="/icons/star.svg" class="absolute left-[-110px] top-[10px] w-4 opacity-10"alt="Luna" />
-      <img src="/icons/star.svg" class="absolute right-[-650px] top-[0px] w-8 opacity-10"alt="Luna" />
-      <img src="/icons/star.svg" class="absolute right-[-220px] top-[45px] w-7 opacity-10"alt="Luna" />
-      <img src="/icons/star.svg" class="absolute right-[-400px] top-[50px] w-6 opacity-10"alt="Luna" />
-      <img src="/icons/star.svg" class="absolute right-[-500px] top-[10px] w-5 opacity-10"alt="Luna" />
-      <img src="/icons/star.svg" class="absolute right-[-110px] top-[10px] w-4 opacity-10"alt="Luna" />
-    </div>
+          <img src="/icons/star.svg" class="absolute left-[-650px] top-[0px] w-8 opacity-10"alt="Luna" />
+          <img src="/icons/star.svg" class="absolute left-[-220px] top-[45px] w-7 opacity-10"alt="Luna" />
+          <img src="/icons/star.svg" class="absolute left-[-400px] top-[50px] w-6 opacity-10"alt="Luna" />
+          <img src="/icons/star.svg" class="absolute left-[-500px] top-[10px] w-5 opacity-10"alt="Luna" />
+          <img src="/icons/star.svg" class="absolute left-[-110px] top-[10px] w-4 opacity-10"alt="Luna" />
+          <img src="/icons/star.svg" class="absolute right-[-650px] top-[0px] w-8 opacity-10"alt="Luna" />
+          <img src="/icons/star.svg" class="absolute right-[-220px] top-[45px] w-7 opacity-10"alt="Luna" />
+          <img src="/icons/star.svg" class="absolute right-[-400px] top-[50px] w-6 opacity-10"alt="Luna" />
+          <img src="/icons/star.svg" class="absolute right-[-500px] top-[10px] w-5 opacity-10"alt="Luna" />
+          <img src="/icons/star.svg" class="absolute right-[-110px] top-[10px] w-4 opacity-10"alt="Luna" />
+        </div>
 
-  <div class="relative inline-block">
-    <!-- Ícono -->
-    <img
-      src="/icons/moon.svg"
-      @click="cambiarPoema"
-      class="absolute left-[-400px] top-[1px] w-8 cursor-pointer opacity-15 hover:opacity-100 hover:scale-150 transition"
-      alt="Luna"
-    />
-
+      <div class="relative inline-block">
+        <!-- Ícono -->
         <img
-      src="/icons/star.svg"
-      @click="cambiarPoema"
-      class="absolute left-[-300px] top-[100px] w-7 cursor-pointer opacity-15 hover:opacity-100 hover:scale-150 transition"
-      alt="Luna"
-    />
-            <img
-      src="/icons/heart.svg"
-      class="absolute left-[-400px] top-[200px] w-8 opacity-10 "
-      alt="Luna"
-    />
-      <img src="/icons/star.svg" class="absolute left-[-90px] top-[10px] w-8 opacity-10"alt="Luna" />
-      <img src="/icons/star.svg" class="absolute left-[-495px] top-[99px] w-5 opacity-15"alt="Luna" />
-      <img src="/icons/star.svg" class="absolute left-[-110px] top-[100px] w-4 opacity-15"alt="Luna" />
-      <img src="/icons/star.svg" class="absolute left-[-40px] top-[200px] w-6 opacity-15"alt="Luna" />
-      <img src="/icons/star.svg" class="absolute left-[-555px] top-[242px] w-5 opacity-15"alt="Luna" />
-      <img src="/icons/star.svg" class="absolute left-[-184px] top-[260px] w-4 opacity-20"alt="Luna" />
-      <img src="/icons/star.svg" class="absolute left-[-215px] top-[1px] w-4 opacity-20"alt="Luna" />
-      <img src="/icons/moon.svg" class="absolute right-[-400px] top-[1px] w-8 opacity-10" alt="Luna"/>
+          src="/icons/moon.svg"
+          @click="cambiarPoema"
+          class="absolute left-[-400px] top-[1px] w-8 cursor-pointer opacity-15 hover:opacity-100 hover:scale-150 transition"
+          alt="Luna"
+        />
 
-        <img
-      src="/icons/star.svg"
-      @click="cambiarPoema"
-      class="absolute right-[-300px] top-[100px] w-8 cursor-pointer opacity-15 hover:opacity-100 hover:scale-150 transition"
-      alt="Luna"
-    />
             <img
-      src="/icons/heart.svg"
-      @click="cambiarPoema"
-      class="absolute right-[-400px] top-[200px] w-5 cursor-pointer opacity-10 hover:opacity-100 hover:scale-150 transition"
-      alt="Luna"
-    />
-      <img src="/icons/star.svg" class="absolute right-[-90px] top-[10px] w-8 opacity-10"alt="Luna" />
-      <img src="/icons/star.svg" class="absolute right-[-495px] top-[99px] w-5 opacity-5"alt="Luna" />
-      <img src="/icons/star.svg" class="absolute right-[-110px] top-[100px] w-4 opacity-20"alt="Luna" />
-      <img src="/icons/star.svg" class="absolute right-[-40px] top-[200px] w-6 opacity-15"alt="Luna" />
-      <img src="/icons/star.svg" class="absolute right-[-555px] top-[242px] w-5 opacity-25"alt="Luna" />
-      <img src="/icons/star.svg" class="absolute right-[-184px] top-[260px] w-4 opacity-10"alt="Luna" />
-      <img src="/icons/star.svg" class="absolute right-[-215px] top-[1px] w-4 opacity-10"alt="Luna" />
+          src="/icons/star.svg"
+          @click="cambiarPoema"
+          class="absolute left-[-300px] top-[100px] w-7 cursor-pointer opacity-15 hover:opacity-100 hover:scale-150 transition"
+          alt="Luna"
+        />
+                <img
+          src="/icons/heart.svg"
+          class="absolute left-[-400px] top-[200px] w-8 opacity-10 "
+          alt="Luna"
+        />
+          <img src="/icons/star.svg" class="absolute left-[-90px] top-[10px] w-8 opacity-10"alt="Luna" />
+          <img src="/icons/star.svg" class="absolute left-[-495px] top-[99px] w-5 opacity-15"alt="Luna" />
+          <img src="/icons/star.svg" class="absolute left-[-110px] top-[100px] w-4 opacity-15"alt="Luna" />
+          <img src="/icons/star.svg" class="absolute left-[-40px] top-[200px] w-6 opacity-15"alt="Luna" />
+          <img src="/icons/star.svg" class="absolute left-[-555px] top-[242px] w-5 opacity-15"alt="Luna" />
+          <img src="/icons/star.svg" class="absolute left-[-184px] top-[260px] w-4 opacity-20"alt="Luna" />
+          <img src="/icons/star.svg" class="absolute left-[-215px] top-[1px] w-4 opacity-20"alt="Luna" />
+          <img src="/icons/moon.svg" class="absolute right-[-400px] top-[1px] w-8 opacity-10" alt="Luna"/>
 
-    <!-- Burbuja siempre visible -->
+            <img
+          src="/icons/star.svg"
+          @click="cambiarPoema"
+          class="absolute right-[-300px] top-[100px] w-8 cursor-pointer opacity-15 hover:opacity-100 hover:scale-150 transition"
+          alt="Luna"
+        />
+                <img
+          src="/icons/heart.svg"
+          @click="cambiarPoema"
+          class="absolute right-[-100px] top-[200px] w-5 cursor-pointer opacity-10 hover:opacity-100 hover:scale-150 transition"
+          alt="Luna"
+        />
+          <img src="/icons/star.svg" class="absolute right-[-90px] top-[10px] w-8 opacity-10"alt="Luna" />
+          <img src="/icons/star.svg" class="absolute right-[-495px] top-[99px] w-5 opacity-5"alt="Luna" />
+          <img src="/icons/star.svg" class="absolute right-[-110px] top-[100px] w-4 opacity-20"alt="Luna" />
+          <img src="/icons/star.svg" class="absolute right-[-40px] top-[200px] w-6 opacity-15"alt="Luna" />
+          <img src="/icons/star.svg" class="absolute right-[-555px] top-[242px] w-5 opacity-25"alt="Luna" />
+          <img src="/icons/star.svg" class="absolute right-[-184px] top-[260px] w-4 opacity-10"alt="Luna" />
+          <img src="/icons/star.svg" class="absolute right-[-215px] top-[1px] w-4 opacity-10"alt="Luna" />
+
+        <!-- Burbuja siempre visible -->
+<div class="relative bottom-[100px] z-[9999]">
+  <!-- Tooltip flotante que crece hacia arriba -->
 <div
-  class="absolute top-[-220px] right-1/2 sm:right-[-150px] translate-x-1/2 sm:translate-x-0 bg-white text-[#242424] font-bold text-sm px-4 py-2 rounded-xl shadow-md max-w-[400px] min-h-[20px] transition-all duration-500 ease-in-out"
+  class="absolute left-1/2 bottom-[60px] -translate-x-1/2 bg-[#FFFFFF] text-[#242424] font-bold text-sm px-4 py-2 rounded-xl shadow-md min-w-[400px] w-auto max-h-[190px] h-auto transition-all duration-500 ease-in-out"
 >
-  <!-- Triángulo tipo "cola" -->
-  <div class="absolute bottom-0 left-5 w-0 h-0 border-l-[10px] border-l-transparent
-  border-r-[10px] border-r-transparent border-t-[10px] border-t-white translate-y-full"></div>
+  <!-- Contenido dinámico -->
   {{ poemaActual }}
 </div>
-      <!-- Título principal -->
-      <h1 class="font-oswald font-bold text-6xl pt-8 text-[#242424]">Tell me about your<br>next project</h1>
-    </div>
 
-    <div class="flex justify-center items-center text-center gap-6 pt-16">
-      <a
-        href="https://mail.google.com/mail/?view=cm&fs=1&to=luafergg@gmail.com"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="bg-[#242424] font-bold text-white w-[130px] py-2 rounded-full transition-transform mx-auto hover:scale-105 shadow-sm text-center inline-block"
-      >e-mail</a>
-      <a
-        href="https://wa.me/+573223929826"
-        target="_blank"
-        class="bg-[#FAFAFA] font-bold text-[#242424] w-[130px] py-2 rounded-full transition-transform mx-auto hover:scale-105 shadow-sm text-center inline-block"
-      >Whatsapp</a>
-    </div>
-  </div>
-</section>
+  <!-- Triángulo tipo "cola" anclado debajo del tooltip -->
+  <div
+    class="absolute bottom-[50px] left-[200px] w-0 h-0 border-l-[10px] border-l-transparent
+    border-r-[10px] border-r-transparent border-t-[10px] border-t-[#FFFFFF]"
+  ></div>
+</div>
+
+          <!-- Título principal -->
+          <h1 class="font-oswald font-bold lg:text-6xl pt-8 text-4xl text-[#242424]">Tell me about your<br>next project</h1>
+        </div>
+
+        <div class="flex justify-center items-center text-center gap-6 pt-16">
+          <a
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=luafergg@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="bg-[#242424] font-bold text-white w-[130px] py-2 rounded-full transition-transform mx-auto hover:scale-105 shadow-sm text-center inline-block"
+          >e-mail</a>
+          <a
+            href="https://wa.me/+573223929826"
+            target="_blank"
+            class="bg-[#FFFFFF] font-bold text-[#242424] w-[130px] py-2 rounded-full transition-transform mx-auto hover:scale-105 shadow-sm text-center inline-block"
+          >Whatsapp</a>
+        </div>
+      </div>
+    </section>
 
 <footer class="py-[50px] px-[24px] md:px-[150px] z-10">
   <div class="flex flex-col items-center gap-6 md:flex-row md:justify-between md:items-center text-center md:text-left relative">
@@ -346,6 +351,11 @@
     </div>
     
   </div>
+
+  <!---<section class="flex col justify-center gap-20 h-[900px]">
+  <div class="flex justify-center items-center ">
+    <CircularDropdown /></div>
+  </section> -->
 </footer>
 
   </main>
@@ -357,6 +367,7 @@ import confetti from 'canvas-confetti';
 import { ref, nextTick, onMounted } from 'vue';
 import gsap from 'gsap';
 import { useI18n } from 'vue-i18n';
+import CircularDropdown from './components/CircularDropdown.vue';
 
 
 const isMobile = ref(false)
@@ -386,22 +397,9 @@ con verte, ya lo entiendo:
 el brillo de las estrellas  
 vive en tus ojos."`,
 
-  `"Tu rostro, una sombra en la penumbra,  
-se dibuja lento bajo la luz de la luna.  
-Cada curva, cada línea,  
-una historia que se cuenta en silencio,  
-un misterio que solo la noche entiende.
+  `"Tu rostro emerge como un susurro en la penumbra, lento y sereno bajo la luz de la luna. Cada línea, cada curva, es una historia sin voz que solo la noche sabe escuchar. La luz roza tu piel con una suavidad que parece un recuerdo, y la luna, paciente, va pintando tu silueta como si fuera un secreto. El viento calla, el tiempo se detiene, y en ese instante suspendido, el mundo entero observa en silencio mientras la luna te besa con su caricia de plata."
 
-La luz toca tu piel, suave y callada,  
-y la luna pinta, delicada, tu silueta  
-como un suspiro que se escapa al viento,  
-como un sueño que la oscuridad guarda.
-
-No hay palabras, solo la quietud del instante,  
-donde el tiempo se detiene  
-y el mundo observa tu rostro en silencio,  
-mientras la luna lo besa  
-con una caricia de plata."`,
+`,
 
 `"Te entrego mi corazón  
 en cada suspiro que se pierde entre tus palabras,  
