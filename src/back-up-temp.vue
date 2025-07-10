@@ -444,3 +444,54 @@ const duplicatedImages = [...imageList, ...imageList];
 <style scoped>
 
 </style>
+
+!-- inicia la linea del tiempo -->
+    <div class="bg-blue-200 relative flex justify-center p-20">
+    <div class="relative w-[50%]">
+      <!-- Ícono flotante sobre la línea de tiempo -->
+      <div class="flex flex-col-reverse items-center absolute top-[-95px] left-[82.5%] translate-x-[-50%]">
+        <!-- Círculo al final -->
+        <div class="w-5 h-5 bg-[#242424] rounded-full"></div>
+
+        <!-- Línea vertical que crece hacia arriba -->
+        <div class="w-[2px] h-[55px] bg-black rounded-t-full"></div>
+
+        <!-- Ícono arriba -->
+        <img src="/icons/star.svg" alt="Icono" class="w-6 h-6 m-1 hover:scale-150 transition-transform duration-200" />
+      </div>
+
+      <!-- Línea horizontal -->
+      <div class="relative w-full mx-auto mb-20">
+        <div class="h-[8px] bg-[#242424] w-full rounded-full"></div>
+
+        <!-- Marcas verticales -->
+        <div class="absolute top-0 left-0 w-full h-full">
+          <div class="relative w-full h-full">
+            <div
+              v-for="i in totalTicks"
+              :key="i"
+              :class="[
+                'absolute bg-[#242424] rounded-full',
+                i % interval === 0 ? 'h-[52px] w-[2.5px]' : 'h-5 w-[1px]',
+              ]"
+              :style="{ left: `${(i / totalTicks) * 98}%` }"
+            ></div>
+
+            <!-- Fechas junto a líneas largas -->
+            <div v-for="i in totalTicks" :key="'date-' + i">
+              <div
+                v-if="i % interval === 0"
+                class="absolute top-[25px] text-md text-[#242424] font-bold max-w-[5px] text-center leading-none"
+                :style="{ left: `calc(${(i / totalTicks) * 98}% + 8px)` }"
+              >
+                <div>
+                  {{ getYear(i).slice(0, 2) }}<br />
+                  {{ getYear(i).slice(2) }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
