@@ -2,13 +2,13 @@
 
 /* Scroll flotante en navegadores WebKit */
 ::-webkit-scrollbar {
-    width: 12px;
+    width: 2px;
     background: transparent;
 }
 
 ::-webkit-scrollbar-track {
     background: transparent;
-    margin: 40px 0;
+    margin: 1px 0;
     /* hace que el scroll se vea más corto */
 }
 
@@ -16,7 +16,7 @@
     background-color: #242424;
     border-radius: 9999px;
     background-clip: content-box;
-    border: 2px solid transparent;
+    border: 1px solid transparent;
 }
 
 /* Scroll tipo "flotante" para Firefox */
