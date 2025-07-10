@@ -1,4 +1,6 @@
 <template>
+  <main class="scroll-container h-screen overflow-y-scroll"> <!--fondo- fondo-->
+ <section class="snap-section h-screen">
 <header class="bg-[#E3E3E3] pt-[10px] sm:pt-[40px] pl-4 pr-4 lg:pl-20 lg:pr-20 z-10 transition-[padding] duration-300 ease-in-out">
   <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 sm:gap-0 p-4 text-[#868686]">
     
@@ -9,13 +11,13 @@
       <!-- Botón Copiar -->
       <button
         @click="copyToClipboard"
-        class="bg-[#FFFFFF] shadow-sm w-[80px] sm:w-[100px] px-2 sm:px-4 py-1 rounded-full hover:bg-[#242424] hover:text-light00 transition text-center text-sm sm:text-base">
+        class="bg-[#FFFFFF] shadow-sm w-[80px] sm:w-[100px] px-2 sm:px-4 py-1 rounded-full hover:bg-[#242424] hover:text-[#FFFFFF] transition text-center text-sm sm:text-base">
         {{ isMobile ? 'E-mail' : 'Copy' }}
       </button>
 
       <!-- Botón CV -->
       <a
-        href="https://drive.google.com/file/d/14ONub5qdbXsatwyGjADjbIdWKlNV_r-l/view"
+        href="https://drive.google.com/file/d/1lAJUdKh9xiTvvBpqNfB7r6Qt__8zbAiV/view"
         target="_blank"
         class="bg-[#FFFFFF] shadow-sm w-[80px] sm:w-[100px] px-2 sm:px-4 py-1 rounded-full hover:bg-[#242424] hover:text-[#FFFFFF] transition inline-block text-center text-sm sm:text-base">
         CV
@@ -69,7 +71,6 @@
 
   </div>
 </header>
-
   <!-- Notificación con animación de entrada y salida -->
   <transition name="fade-slide">
     <div
@@ -79,7 +80,6 @@
     </div>
   </transition>
 
-  <main class="bg-[#EEEDEC] h-screen"> <!--fondo- fondo-->
 <div class="bg-[#E3E3E3] py-6 lg:py-12 rounded-b-[60px] shadow-[0_4px_2px_-1px_#D9D9D9]">
     <div class="flex justify-center items-start pt-[40px]">
       <div class="relative">
@@ -102,7 +102,7 @@
     </div>
 
     <!-- Texto y titulo -->
-    <section class=" flex flex-col justify-center items-center text-center py-6 px-4">
+    <div class=" flex flex-col justify-center items-center text-center py-6 px-4">
       <div class="">
 <h1 class="font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#242424] leading-tight">
   Heart in digital<br />
@@ -117,16 +117,15 @@
   <button 
     class="mt-[60px] mb-3 bg-[#242424] text-[#FFFFFF] shadow-md font-semibold text-md px-8 py-4
       rounded-full flex items-center gap-2 transition-transform mx-auto hover:scale-105 transition">
-    Latest Shots
-  </button>
-</a>
-      </div>
-    </section>
+      Latest Shots
+    </button>
+      </a>
+    </div>
+    </div>
   </div>
-
   <!-- ------------------------------------------------------Galería infinita tipo cinta transportadora---------------- -->
 
-    <section class="flex items-center overflow-hidden w-full h-[200px] pt-2 opacity-[90%]">
+    <div class="flex items-center overflow-hidden w-full h-[200px] pt-2 opacity-[90%]">
       <div
         id="carousel"
         class="flex w-[200%] animate-scroll">
@@ -137,10 +136,11 @@
         :alt="`Imagen ${index + 1}`"
         class="h-[110px] w-auto px-10 object-cover opacity-100"/>
       </div>
-    </section>
+    </div>
+  </section>    
      
-    <section class="bg-[#E3E3E3] w-full rounded-t-[60px] flex flex-col justify-center items-center text-center py-16 shadow-[0_-4px_2px_-1px_#D9D9D9]">
-      <div class="w-full flex flex-col items-center text-center content-center pt-16">
+    <section class="snap-section h-screen bg-[#E3E3E3] w-full rounded-t-[60px] flex flex-col justify-center items-center text-center py-[90px]  lg:py-20 shadow-[0_-4px_2px_-1px_#D9D9D9]">
+      <div class="w-full flex flex-col items-center text-center content-center pt-0 lg:pb-10">
               <div @click="handleFall"
           :class="['',falling? 'animate-fall pointer-events-none' :'']"
           :style="{ visibility: showButton ? 'visible' : 'hidden',
@@ -148,12 +148,12 @@
           transition: 'opacity 0.6s ease-in-out'
            }"
           @animationend="handleAnimationEnd">
-          <h1 class="font-bold text-4xl lg:text-6xl text-[#242424] leading-tight">
+          <h1 class="font-bold text-3xl md:text-6xl text-[#242424] leading-tight pb:0 lg:pb-20">
               Bringing Vision to Life,<br>One Pixel at a Time
           </h1>
           </div>
         <div @click="handleFall"
-          :class="['relative w-full flex items-center justify-center my-20',falling? 'animate-fall pointer-events-none' :'']"
+          :class="['relative w-full flex items-center justify-center mt-[50px] md:mt-0',falling? 'animate-fall pointer-events-none' :'']"
           :style="{ visibility: showButton ? 'visible' : 'hidden',
           opacity: showButton ? 1 : 0,
           transition: 'opacity 0.6s ease-in-out'
@@ -179,13 +179,13 @@
           transition: 'opacity 0.6s ease-in-out'
            }"
           @animationend="handleAnimationEnd">
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-20 pb-18">
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-0 lg:gap-20">
         <!-- --------------------------------------first card--------------------------------- -->
         <div class="p-8 text-left max-w-[250px] order-2">
           <div class="">
-            <img src="/icons/icon_dev1.svg" alt="" class="w-[50px] py-4"/>
+            <img src="/icons/icon_dev1.svg" alt="" class="w-[48px] py-4"/>
           </div>
-          <h3 class="text-lg text-[#242424] font-bold pb-4">Development</h3>
+          <h3 class="text-xl text-[#242424] font-bold pb-4">Development</h3>
           <p class="text-md">Bringing your projects to life with a mix of creativity and innovation, always aiming for something functional and fun.</p>
           </div>
           <!-- --------------------------------------second card--------------------------------- -->
@@ -193,7 +193,7 @@
           <div class="">
             <img src="/icons/icon_design.svg" alt="" class="w-[50px] py-4"/>
           </div>
-          <h3 class="text-lg text-[#242424] font-bold pb-4">Design & Creative</h3>
+          <h3 class="text-xl text-[#242424] font-bold pb-4">Design & Creative</h3>
           <p class="text-md">Every design is a conversation... one that connects, engages, and inspires.</p>
         </div>      
           <!-- --------------------------------------third card--------------------------------- -->
@@ -201,7 +201,7 @@
           <div class="">
             <img src="/icons/icon_ux.svg" alt="" class="w-[50px] py-4"/>
           </div>
-          <h3 class="text-lg text-[#242424] font-bold pb-4">UI & UX</h3>
+          <h3 class="text-xl text-[#242424] font-bold pb-4">UI & UX</h3>
           <p class="text-md">Interfaces that are clear, fast, and flowing... every click feels like part of a unique experience...</p>
         </div>
         <!-- --------------------------------------fourth card--------------------------------- -->
@@ -210,27 +210,158 @@
           <div class="">
             <img src="/icons/icon_plants.svg" alt="" class="w-[50px] py-4"/>
           </div>
-          <h3 class="text-lg text-[#242424] font-bold pb-4">Plants :D</h3>
+          <h3 class="text-xl text-[#242424] font-bold pb-4">Plants :D</h3>
           <p class="text-md">And yes, I'm a plant maniac, finding joy in each new leaf and the natural beauty plants bring to any space.</p>
         </div>
         </div>
       </div>
     </section>
-    <section>
-      <div class="bg-[#E3E3E3] w-full flex flex-col justify-center items-center text-center pt-[160px] border-t border-[#d9d9d9] rounded-b-[60px] pb-20 shadow-[0_4px_3px_-1px_#D9D9D9] relative overflow-visible">   
-        <div class="relative z-[100]">
+
+
+
+   <!-- s 
+<section class="bg-[#e3e3e3] hidden md:flex flex-col pt-14 snap-section h-screen">
+  <!-- Títulos 
+  <h1 class="text-center font-bold text-3xl sm:text-4xl md:text-5xl lg:text-4xl text-[#868686] pt-4">
+    ...From Dreams to Reality
+  </h1>
+  <h1 class="text-center font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#242424] pb-8">
+    This Is My Journey
+  </h1>
+
+  <!-- Contenedor principal 
+  <div class="max-w-[1300px] mx-auto px-4 pb-2 flex flex-col md:flex-row items-center gap-6 md:gap-8 md:h-[510px]">
+    <!-- Ficha de contenido 
+    <div class="flex-1 border-b border-[#242424] w-full overflow-visible">
+      <Transition name="bounce-x" mode="out-in" appear>
+        <div
+          v-if="fichas[currentIndex]"
+          :key="currentIndex"
+          class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-[80px] px-4 md:px-8 py-2 mb-5 rounded-xl"
+        >
+          <!-- Info
+          <div class="flex flex-col gap-6 items-start md:items-start">
+            <img
+          :src="fichas[currentIndex].logo"
+          alt="Logo"
+          class="h-20 w-auto max-w-full object-contain sm:h-20"
+        />
+            <p class="text-[#868686] text-md pl-4" v-html="fichas[currentIndex].descripcion"></p>
+            <div class="mt-auto">
+              <a
+                :href="fichas[currentIndex].web"
+                target="_blank"
+                class="text-[#242424] font-bold underline text-sm pl-4"
+              >
+                {{ fichas[currentIndex].web }}
+              </a>
+            </div>
+          </div>
+
+          <!-- Galería 
+          <Gallery :images="fichas[currentIndex].images" />
+        </div>
+      </Transition>
+    </div>
+  </div>
+
+  <!-- Línea de tiempo 
+  <div class="hidden md:flex relative flex justify-center pt-[100px] lg:pt-20 px-2">
+    <div class="relative w-[90%] lg:w-[65%]">
+
+      <!-- Botones de iconos 
+      <div
+        v-for="(boton, i) in botones"
+        :key="i"
+        class="flex flex-col-reverse items-center absolute -top-[87px]"
+        :style="{ left: `${boton.posicion}%`, transform: 'translateX(-50%)' }"
+      >
+        <!-- Círculo 
+        <div class="w-4 h-4 rounded-full transition-colors duration-300 bg-[#242424]"></div>
+
+        <!-- Línea vertical 
+        <div class="relative h-[50px]">
+          <div
+            class="w-[1px] bg-[#242424] rounded-t-full absolute bottom-0 transition-all duration-300"
+            :class="currentIndex === boton.index ? 'h-[122px]' : 'h-[40px]'"
+          ></div>
+        </div>
+
+        <!-- Ícono 
+        <img
+          :src="boton.icono"
+          alt="Icono de etapa"
+          class="w-8 h-8 transform transition-all duration-200 ease-in-out cursor-pointer hover:scale-150"
+          :class="{
+            'translate-y-[-100px] opacity-0': currentIndex === boton.index,
+            'translate-y-0 opacity-100': currentIndex !== boton.index
+          }"
+          @click="currentIndex = boton.index"
+        />
+      </div>
+
+      <!-- Línea horizontal 
+      <div class="relative w-full mx-auto mb-20">
+        <div class="h-[6px] bg-[#242424] w-full rounded-full"></div>
+
+        <!-- Marcas y fechas 
+        <div class="absolute top-0 left-0 w-full h-full">
+          <div class="relative w-full h-full">
+            <div
+              v-for="i in totalTicks"
+              :key="i"
+              class="absolute"
+              :style="{ left: `${(i / totalTicks) * 98}%` }"
+            >
+              <!-- Línea vertical
+              <div
+                :class="[
+                  'bg-[#242424] rounded-full',
+                  i % interval === 0 ? 'h-[52px] w-[2px]' : 'h-5 w-[1px]'
+                ]"
+              ></div>
+
+              <!-- Fecha 
+              <div
+                v-if="i % interval === 0"
+                class="absolute top-[25px] text-[10px] sm:text-sm text-[#242424] font-bold text-center leading-none"
+                :style="{ left: '8px' }"
+              >
+                <div>
+                  {{ getYear(i).slice(0, 2) }}<br />
+                  {{ getYear(i).slice(2) }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> 
+</section> -->
+
+
+
+
+
+
+    <section class="snap-section h-screen">
+      <div class="bg-[#E3E3E3] w-full flex flex-col justify-center items-center text-center pt-[150px] lg:pt-[250px] rounded-b-[60px] pb-28 shadow-[0_4px_3px_-1px_#D9D9D9]relative overflow-visible">   
+        <div class="relative z-[10]">
           <img src="/foto.png" alt="Fer, diseñadora gráfica" class="w-[150px] rounded-full border-[6px] border-[#FFFFFF] shadow-lg object-cover"/>
 
-          <img src="/icons/star.svg" class="absolute left-[-650px] top-[0px] w-8 opacity-10"alt="Luna" />
-          <img src="/icons/star.svg" class="absolute left-[-220px] top-[45px] w-7 opacity-10"alt="Luna" />
-          <img src="/icons/star.svg" class="absolute left-[-400px] top-[50px] w-6 opacity-10"alt="Luna" />
-          <img src="/icons/star.svg" class="absolute left-[-500px] top-[10px] w-5 opacity-10"alt="Luna" />
-          <img src="/icons/star.svg" class="absolute left-[-110px] top-[10px] w-4 opacity-10"alt="Luna" />
-          <img src="/icons/star.svg" class="absolute right-[-650px] top-[0px] w-8 opacity-10"alt="Luna" />
-          <img src="/icons/star.svg" class="absolute right-[-220px] top-[45px] w-7 opacity-10"alt="Luna" />
-          <img src="/icons/star.svg" class="absolute right-[-400px] top-[50px] w-6 opacity-10"alt="Luna" />
-          <img src="/icons/star.svg" class="absolute right-[-500px] top-[10px] w-5 opacity-10"alt="Luna" />
-          <img src="/icons/star.svg" class="absolute right-[-110px] top-[10px] w-4 opacity-10"alt="Luna" />
+  <img
+    v-for="(star, index) in stars"
+    :key="index"
+    :src="star.src"
+    class="absolute opacity-10"
+    :class="[
+      star.side === 'left' ? `left-[${star.x}px]` : `right-[${star.x}px]`,
+      `top-[${star.y}px]`,
+      `w-${star.size}`
+    ]"
+    alt="Estrella"
+  />  
         </div>
 
       <div class="relative inline-block">
@@ -241,7 +372,7 @@
           class="absolute left-[-400px] top-[1px] w-8 cursor-pointer opacity-15 hover:opacity-100 hover:scale-150 transition"
           alt="Luna"
         />
-
+   
             <img
           src="/icons/star.svg"
           @click="cambiarPoema"
@@ -253,14 +384,6 @@
           class="absolute left-[-400px] top-[200px] w-8 opacity-10 "
           alt="Luna"
         />
-          <img src="/icons/star.svg" class="absolute left-[-90px] top-[10px] w-8 opacity-10"alt="Luna" />
-          <img src="/icons/star.svg" class="absolute left-[-495px] top-[99px] w-5 opacity-15"alt="Luna" />
-          <img src="/icons/star.svg" class="absolute left-[-110px] top-[100px] w-4 opacity-15"alt="Luna" />
-          <img src="/icons/star.svg" class="absolute left-[-40px] top-[200px] w-6 opacity-15"alt="Luna" />
-          <img src="/icons/star.svg" class="absolute left-[-555px] top-[242px] w-5 opacity-15"alt="Luna" />
-          <img src="/icons/star.svg" class="absolute left-[-184px] top-[260px] w-4 opacity-20"alt="Luna" />
-          <img src="/icons/star.svg" class="absolute left-[-215px] top-[1px] w-4 opacity-20"alt="Luna" />
-          <img src="/icons/moon.svg" class="absolute right-[-400px] top-[1px] w-8 opacity-10" alt="Luna"/>
 
             <img
           src="/icons/star.svg"
@@ -274,16 +397,9 @@
           class="absolute right-[-100px] top-[200px] w-5 cursor-pointer opacity-10 hover:opacity-100 hover:scale-150 transition"
           alt="Luna"
         />
-          <img src="/icons/star.svg" class="absolute right-[-90px] top-[10px] w-8 opacity-10"alt="Luna" />
-          <img src="/icons/star.svg" class="absolute right-[-495px] top-[99px] w-5 opacity-5"alt="Luna" />
-          <img src="/icons/star.svg" class="absolute right-[-110px] top-[100px] w-4 opacity-20"alt="Luna" />
-          <img src="/icons/star.svg" class="absolute right-[-40px] top-[200px] w-6 opacity-15"alt="Luna" />
-          <img src="/icons/star.svg" class="absolute right-[-555px] top-[242px] w-5 opacity-25"alt="Luna" />
-          <img src="/icons/star.svg" class="absolute right-[-184px] top-[260px] w-4 opacity-10"alt="Luna" />
-          <img src="/icons/star.svg" class="absolute right-[-215px] top-[1px] w-4 opacity-10"alt="Luna" />
 
         <!-- Burbuja siempre visible -->
-<div class="relative bottom-[100px] z-[9999]">
+<div class="relative bottom-[100px] z-[10 ]">
   <!-- Tooltip flotante que crece hacia arriba -->
 <div
   class="absolute left-1/2 bottom-[60px] -translate-x-1/2 bg-[#FFFFFF] text-[#242424] font-bold text-sm px-4 py-2 rounded-xl shadow-md min-w-[400px] w-auto max-h-[190px] h-auto transition-all duration-500 ease-in-out"
@@ -311,15 +427,15 @@
             class="bg-[#242424] font-bold text-white w-[130px] py-2 rounded-full transition-transform mx-auto hover:scale-105 shadow-sm text-center inline-block"
           >e-mail</a>
           <a
-            href="https://wa.me/+573223929826"
+            href="https://wa.me/+573204875335"
             target="_blank"
             class="bg-[#FFFFFF] font-bold text-[#242424] w-[130px] py-2 rounded-full transition-transform mx-auto hover:scale-105 shadow-sm text-center inline-block"
           >Whatsapp</a>
         </div>
       </div>
-    </section>
+   
 
-<footer class="py-[50px] px-[24px] md:px-[150px] z-10">
+<footer class="py-[80px] px-[24px] md:px-[150px] z-10">
   <div class="flex flex-col items-center gap-6 md:flex-row md:justify-between md:items-center text-center md:text-left relative">
 
     <!-- Derechos reservados -->
@@ -328,43 +444,208 @@
     </div>
 
     <!-- Logo -->
-    <img src="/icons/logo_lu.svg"
-         class="w-12 order-1 md:order-2 md:absolute md:left-1/2 md:transform md:-translate-x-1/2"
-         alt="Logo Lüa">
-
-    <!-- Links -->
-    <div class="flex flex-wrap justify-center items-center space-x-4 order-2 md:order-3">
-      <a href="https://www.linkedin.com/in/lua-ackermann-18014a355/"
-         target="_blank"
-         class="hover:underline hover:text-[#242424] hover:font-bold decoration-[#242424] transition">
-         LinkedIn</a>
-      <span>/</span>
-      <a href="https://www.behance.net/laferackerma1"
-         target="_blank"
-         class="hover:underline hover:text-[#242424] hover:font-bold decoration-[#242424] transition">
-         Behance</a>
-      <span>/</span>
-      <a href="https://fireweb.digiapps.com.co"
-         target="_blank"
-         class="hover:underline hover:text-[#242424] hover:font-bold decoration-[#242424] transition">
-         Fireweb</a>
-    </div>
-    
-  </div>
-
-</footer>
-
-  </main>
+        <img src="/icons/logo_lu.svg"
+            class="w-12 order-1 md:order-2 md:absolute md:left-1/2 md:transform md:-translate-x-1/2"
+            alt="Logo Lüa">
+        <!-- Links -->
+        <div class="flex flex-wrap justify-center items-center space-x-4 order-2 md:order-3">
+          <a href="https://www.linkedin.com/in/lua-ackermann-18014a355/"
+            target="_blank"
+            class="hover:underline hover:text-[#242424] hover:font-bold  decoration-[#242424] transition">
+            LinkedIn
+          </a>
+          <span>/</span>
+          <a href="https://www.behance.net/laferackerma1"
+            target="_blank"
+            class="hover:underline hover:text-[#242424] hover:font-bold decoration-[#242424] transition">
+            Behance
+         </a>
+          <span>/</span>
+          <a href="https://fireweb.digiapps.com.co"
+            target="_blank"
+            class="hover:underline hover:text-[#242424] hover:font-bold decoration-[#242424] transition">
+            Fireweb
+          </a>
+        </div>
+      </div>
+    </footer>
+  </section>
+</main>
 
 </template>
 
 <script setup>
 import confetti from 'canvas-confetti';
-import { ref, nextTick, onMounted } from 'vue';
+import { ref, nextTick, onMounted, onBeforeUnmount } from 'vue';
 import gsap from 'gsap';
 import { useI18n } from 'vue-i18n';
+import Gallery from '@/components/Gallery.vue'
 
 
+// Botones de navegación con íconos y posición
+const botones = [
+  { icono: '/icons/icon_lu.svg', index: 0, posicion: 1.4, iconoY: 10 },
+  { icono: '/icons/icon_art.svg', index: 1, posicion: 10, iconoY: 15 },
+  { icono: '/icons/icon_awana.svg', index: 2, posicion: 20.6, iconoY: 10 },
+  { icono: '/icons/icon_rivera.svg', index: 3 , posicion: 30, iconoY: 10 },
+  { icono: '/icons/icon_film.svg', index: 4, posicion: 40, iconoY: 15 },
+  { icono: '/icons/icon_elephant.svg', index: 5, posicion: 45, iconoY: 15 },
+  { icono: '/icons/icon_plant.svg', index: 6, posicion: 50, iconoY: 15 },
+  { icono: '/icons/icon_000.svg', index: 7, posicion: 54, iconoY: 15 },
+  { icono: '/icons/icon_cat.svg', index: 8, posicion: 60, iconoY: 15 },
+  { icono: '/icons/icon_dev.svg', index: 9, posicion: 70.6, iconoY: 10 },
+  { icono: '/icons/icon_mycare.svg', index: 10, posicion: 79.6, iconoY: 10 },
+  { icono: '/icons/icon_fireweb.svg', index: 11, posicion: 83.6, iconoY: 10 },
+]
+
+
+// Fichas informativas
+const fichas = [
+  {
+    logo: '/icons/logo_lu.svg',
+    descripcion: `I'm a passionate graphic designer with experience in branding, advertising, and UI/UX. I focus on turning ideas into designs that look great and work even better. As a “visual storyteller and pixel whisperer,” I listen closely to what each project needs and bring it to life. I'm currently learning to code to take on new challenges with a broader perspective.<br><br>Beyond design, I have a deep love for biology — especially botany. There's something magical about how plants grow and adapt, and that curiosity often finds its way into my creative process.`,
+    web: 'https://planetfleet.com',
+    images: ['/img/card_lua.png', '/img/card_lua2.png']
+  },
+  // otros objetos... 
+    {
+    logo: '/icons/icon_art.svg',
+    descripcion: `Illustration is how I express what I can’t always say out loud. It helps me explore emotions and ideas through lines and color. Cartoons, in particular, let me find humor in the everyday and beauty in imperfection.<br><br>More than a technique, it’s a space where I recognize myself. Each drawing carries a part of me—my questions, laughter, and quiet thoughts. It’s how I connect, observe, and sometimes make others smile without a word.`,
+    web: 'https://art.io',
+    images: [  '/img/art_card.png', '/img/art_card2.png',
+    ]
+  },
+  {
+    logo: '/img/03.png',
+    descripcion: `The tool functions as a visual editor for JSON documents in Firestore, making data editing intuitive and accessible. Thanks to this simplified interface, users can manage their databases without deep technical knowledge, speeding up workflows and reducing errors.<br><br>I contributed to the complete redesign of the project, creating a strong and functional visual identity—from the new logo to the interface and frontend development..`,
+    web: 'https://fireweb.digiapps.com.co',
+    images: [  '/img/card.png', '/img/card2.png',
+    ]
+  },
+      {
+    logo: '/img/08.png',
+    descripcion: `This project involved creating a logo for Rivera, a family-run company committed to providing the freshest and cleanest vegetables. The design features a simple, elegant “R” combined with a leaf, symbolizing growth, freshness, and nature.<br><br>The challenge was to create a clean and memorable logo that reflects the company’s values of quality and sustainability. The final design balances simplicity with meaning, representing Rivera’s dedication to healthy, natural produce.`,
+    web: 'https://planetfleet.com',
+    images: [  '/img/card.png', '/img/card2.png',
+    ]
+  },
+    {
+    logo: '/icons/icon_film.svg',
+    descripcion: `Esta plataforma ayuda a equipos creativos a colaborar en tiempo real y organizar sus ideas visuales de forma intuitiva.`,
+    web: 'https://moonapp.io',
+    images: [  '/img/card.png', '/img/card2.png',
+    ]
+  },
+  {
+    logo: '/img/04.png',
+    descripcion: `Es una herramienta diseñada para gestionar y sincronizar datos en proyectos multicloud, optimizando la eficiencia y simplificando los procesos.<br><br>Su branding refleja flexibilidad, simplicidad y fiabilidad.`,
+    web: 'https://fireweb.digiapps.com.co',
+    images: [  '/img/card.png', '/img/card2.png',
+    ]
+  },
+      {
+    logo: '/icons/icon_plant.svg',
+    descripcion: `Esta plataforma ayuda a equipos creativos a colaborar en tiempo real y organizar sus ideas visuales de forma intuitiva.`,
+    web: 'https://art.io',
+    images: [  '/img/card.png', '/img/card2.png',
+    ]
+  },
+      {
+    logo: '/img/02.png',
+    descripcion: `This project aimed to capture the unique essence of a rural tourism farm. The client wanted a logo that combined key elements: hospitality, connection to the land, and care for the animals.<br><br>The farm offers immersive rural experiences, so the logo needed to convey warmth and approachability. The challenge was to blend all elements into a clear, harmonious design that captures the essence of the place. The result is a logo full of character, reflecting the countryside, connection to nature, and simple magic.
+
+`,
+    web: 'https://art.io',
+    images: [  '/img/card_granja.png', '/img/card2.png',
+    ]
+  },
+      {
+    logo: '/icons/heart.svg',
+    descripcion: `Esta plataforma ayuda a equipos creativos a colaborar en tiempo real y organizar sus ideas visuales de forma intuitiva.`,
+    web: 'https://art.io',
+    images: [  '/img/card.png', '/img/card2.png',
+    ]
+  },
+      {
+    logo: '/icons/icon_dev.svg',
+    descripcion: `Esta plataforma ayuda a equipos creativos a colaborar en tiempo real y organizar sus ideas visuales de forma intuitiva.`,
+    web: 'https://art.io',
+    images: [  '/img/card.png', '/img/card2.png',
+    ]
+  },
+      {
+    logo: '/img/05.png',
+    descripcion: `My Care is a medical management solution designed to streamline the administration of patient records and appointments, optimizing the organization and tracking of care in an agile and effective way.<br><br>For the visual identity, I designed a cross made of four hearts that represents the effort to rehumanize healthcare services. The interface aims to provide a warm and close experience, emphasizing the importance of putting people at the center of medical care.`,
+    web: 'https://art.io',
+    images: [  '/img/card_care.png', '/img/card2.png',
+    ]
+  },
+      {
+    logo: '/img/01.png',
+    descripcion: `The tool is a visual editor for JSON documents in Firestore that simplifies data management, speeding up processes and minimizing errors.<BR><BR>I contributed to the complete redesign of the project, developing a strong and functional visual identity—from the logo to the interface and frontend development. I focused on improving usability and user experience, ensuring clarity and trust in every element, while the flame in the logo symbolizes the tool’s dynamic and adaptable nature.`,
+    web: 'https:fireweb.digiapps.com.co',
+    images: [  '/img/fireweb-card.png', '/img/fireweb-card2.png',
+    ]
+  },
+
+
+]
+
+const currentIndex = ref(0)
+
+function mostrarSiguiente() {
+  if (currentIndex.value < fichas.length - 1) {
+    currentIndex.value++
+  }
+}
+const proyectoUnoImages = [
+  '/img/fireweb-card.png',
+  '/img/fireweb-card2.png',
+]
+
+const numLongLines = 6;
+const shortPerGap = 13;
+const totalTicks = (numLongLines - 1) * (shortPerGap + 2) - 0;
+const interval = shortPerGap - 1;
+
+const years = ['2020', '2021', '2022', '2023', '2024', '2025', '2026'];
+
+function getYear(i) {
+  const index = Math.floor(i / interval);
+  return years[index] || '';
+}
+
+
+const stars = [
+  { side: 'left', x: -650, y: 10, size: 8, src: '/icons/star.svg' },
+  { side: 'left', x: -220, y: 45, size: 7, src: '/icons/star.svg' },
+  { side: 'left', x: -400, y: 50, size: 6, src: '/icons/star.svg' },
+  { side: 'left', x: -500, y: 10, size: 5, src: '/icons/star.svg' },
+  { side: 'left', x: -110, y: 10, size: 4, src: '/icons/star.svg' },
+  { side: 'right', x: -650, y: 0, size: 8, src: '/icons/star.svg' },
+  { side: 'right', x: -220, y: 45, size: 7, src: '/icons/star.svg' },
+  { side: 'right', x: -400, y: 50, size: 6, src: '/icons/star.svg' },
+  { side: 'right', x: -500, y: 10, size: 5, src: '/icons/star.svg' },
+  { side: 'right', x: -110, y: 10, size: 4, src: '/icons/star.svg' },
+  { side: 'right', x: -90, y: 10, size: 8, opacity: 10, src: '/icons/star.svg' },
+  { side: 'right', x: -495, y: 99, size: 5, opacity: 5, src: '/icons/star.svg' },
+  { side: 'right', x: -110, y: 100, size: 4, opacity: 20, src: '/icons/star.svg' },
+  { side: 'right', x: -40, y: 200, size: 6, opacity: 15, src: '/icons/star.svg' },
+  { side: 'right', x: -555, y: 242, size: 5, opacity: 25, src: '/icons/star.svg' },
+  { side: 'right', x: -184, y: 260, size: 4, opacity: 10, src: '/icons/star.svg' },
+  { side: 'right', x: -215, y: 1, size: 4, opacity: 10, src: '/icons/star.svg' },
+  { side: 'right', x: -400, y: 1, size: 8, opacity: 10, src: '/icons/moon.svg' },
+  
+  // Lado izquierdo
+  { side: 'left', x: -300, y: 250, size: 8, opacity: 10, src: '/icons/star.svg' },
+  { side: 'left', x: -495, y: 99, size: 5, opacity: 15, src: '/icons/star.svg' },
+  { side: 'left', x: -110, y: 100, size: 4, opacity: 15, src: '/icons/star.svg' },
+  { side: 'left', x: -40, y: 200, size: 6, opacity: 15, src: '/icons/star.svg' },
+  { side: 'left', x: -555, y: 242, size: 5, opacity: 15, src: '/icons/star.svg' },
+  { side: 'left', x: -184, y: 260, size: 4, opacity: 20, src: '/icons/star.svg' },
+  { side: 'left', x: -215, y: 1, size: 4, opacity: 20, src: '/icons/star.svg' },
+
+]
 
 const isMobile = ref(false)
 
@@ -532,17 +813,21 @@ const duplicatedImages = [...imageList, ...imageList];
 </script>
 
 <style scoped>
-.social-icon {
-  width: 20px;
-  height: 20px;
-}
 
-/* Ocultar los textos en pantallas pequeñas y mostrar los íconos */
-@media (max-width: 900px) {
-  .social-link span {
-    display: none;
- /* Reducir separación entre íconos */
 
+  .timeline-wrapper {
+    min-height: 100vh; /* Asegura espacio para el componente */
+    position: relative;
+  }
+  .social-icon {
+    width: 20px;
+    height: 20px;
+  }
+    /* Ocultar los textos en pantallas pequeñas y mostrar los íconos */
+  @media (max-width: 900px) {
+    .social-link span {
+      display: none;
+    /* Reducir separación entre íconos */
     
   }
 
@@ -552,9 +837,30 @@ const duplicatedImages = [...imageList, ...imageList];
 
   .social-link img {
     display: inline-block;
- /* Separar el ícono del siguiente enlace */
+  /* Separar el ícono del siguiente enlace */
+      
+  }
     
   }
-  
-}
+  .scroll-container {
+    scroll-snap-type: none;
+  }
+
+  @media (min-width: 768px) {
+    .scroll-container {
+      scroll-snap-type: y mandatory;
+    }
+  }
+
+
+  .snap-section {
+    scroll-snap-align: start;
+    height: auto;
+  }
+
+  @media (min-width: 768px) {
+    .snap-section {
+      height: 100vh;
+    }
+} 
 </style>
