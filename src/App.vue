@@ -36,7 +36,11 @@
       class="bg-[#FFFFFF] p-2 ml-3 rounded-full w-9 inline-block" />
   </a>
   <!-- Nombre de LinkedIn en escritorio -->
-  <span class="lg:inline-block md:inline-block hidden hover:underline hover:text-[#242424] hover:font-bold decoration-[#242424] transition">LinkedIn</span>
+  <a
+    href="https://www.linkedin.com/in/lua-ackermann-18014a355/"
+    target="_blank">
+    <span class="lg:inline-block md:inline-block hidden hover:underline hover:text-[#242424] hover:font-bold decoration-[#242424] transition">LinkedIn</span>
+  </a>
 
   <span class="hidden md:inline-block lg:inline">/</span>
 
@@ -51,13 +55,17 @@
       class="bg-[#FFFFFF] p-2 rounded-full w-9 inline-block" />
   </a>
   <!-- Nombre de Behance en escritorio -->
-  <span class="lg:inline-block md:inline-block hidden hover:underline hover:text-[#242424] hover:font-bold decoration-[#242424] transition">Behance</span>
+  <a
+    href="https://www.behance.net/laferackerma1"
+    target="_blank">
+    <span class="lg:inline-block md:inline-block hidden hover:underline hover:text-[#242424] hover:font-bold decoration-[#242424] transition">Behance</span>
+  </a>
 
   <span class="hidden md:inline-block  lg:inline">/</span>
 
   <!-- Fireweb (solo en móvil) -->
   <a 
-    href="https://fireweb.digiapps.com.co"
+    href="https://github.com/LuaFerGG"
     target="_blank"
     class="social-link hover:underline hover:text-[#242424] hover:font-bold decoration-[#242424] transition flex items-center md:hidden">
     <img
@@ -66,7 +74,10 @@
       class="bg-[#FFFFFF] p-2 rounded-full w-9 inline-block" />
   </a>
   <!-- Nombre de Fireweb en escritorio -->
-  <span class="lg:inline-block hidden  md:inline-block hover:underline hover:text-[#242424] hover:font-bold decoration-[#242424] transition">Fireweb</span>
+  <a
+    href="https://github.com/LuaFerGG"
+    target="_blank">
+    <span class="lg:inline-block hidden  md:inline-block hover:underline hover:text-[#242424] hover:font-bold decoration-[#242424] transition">Github</span></a>
 </div>
 
   </div>
@@ -480,7 +491,6 @@ import { ref, nextTick, onMounted, onBeforeUnmount } from 'vue';
 import gsap from 'gsap';
 import { useI18n } from 'vue-i18n';
 import Gallery from '@/components/Gallery.vue'
-
 
 // Botones de navegación con íconos y posición
 const botones = [
