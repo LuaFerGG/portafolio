@@ -18,12 +18,7 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('@midudev/tailwind-animations')
+  ],
 }
-
-
-
-
-
-
-
