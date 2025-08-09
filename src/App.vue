@@ -228,133 +228,99 @@
       </div>
     </section>
 
-
-
-   <!-- s 
-<section class="bg-[#e3e3e3] hidden md:flex flex-col pt-14 snap-section h-screen">
-  <!-- Títulos 
-  <h1 class="text-center font-bold text-3xl sm:text-4xl md:text-5xl lg:text-4xl text-[#868686] pt-4">
-    ...From Dreams to Reality
-  </h1>
-  <h1 class="text-center font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#242424] pb-8">
-    This Is My Journey
-  </h1>
-
-  <!-- Contenedor principal 
-  <div class="max-w-[1300px] mx-auto px-4 pb-2 flex flex-col md:flex-row items-center gap-6 md:gap-8 md:h-[510px]">
-    <!-- Ficha de contenido 
-    <div class="flex-1 border-b border-[#242424] w-full overflow-visible">
-      <Transition name="bounce-x" mode="out-in" appear>
-        <div
-          v-if="fichas[currentIndex]"
-          :key="currentIndex"
-          class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-[80px] px-4 md:px-8 py-2 mb-5 rounded-xl"
-        >
-          <!-- Info
-          <div class="flex flex-col gap-6 items-start md:items-start">
-            <img
-          :src="fichas[currentIndex].logo"
-          alt="Logo"
-          class="h-20 w-auto max-w-full object-contain sm:h-20"
-        />
-            <p class="text-[#868686] text-md pl-4" v-html="fichas[currentIndex].descripcion"></p>
-            <div class="mt-auto">
-              <a
-                :href="fichas[currentIndex].web"
-                target="_blank"
-                class="text-[#242424] font-bold underline text-sm pl-4"
-              >
-                {{ fichas[currentIndex].web }}
-              </a>
-            </div>
-          </div>
-
-          <!-- Galería 
-          <Gallery :images="fichas[currentIndex].images" />
-        </div>
-      </Transition>
+    <section class="snap-section bg-[#E3E3E3] flex flex-col justify-center items-center h-screen w-full">
+    <div class="relative text-center pb-24   flex items-left">
+      <h2 class="text-6xl font-bold">A Journey<br>Through My Portfolio...</h2>
     </div>
+    <div class="container flex flex-row gap-8">
+    
+  <!-- Mitad izquierda: video -->
+  <div class="relative w-[700px] h-[400px] items-center rounded-xl overflow-hidden">
+    <a
+      href="https://brave-dune-0aab1210f-dev.eastus2.4.azurestaticapps.net/#storage-features"
+      target="_blank"
+      class="m-2 px-2 py-1 z-20 text-xs text-white absolute right-0 flex items-center justify-center rounded-full bg-red-500 cursor-pointer
+      hover:bg-white hover:text-red-500 hover:animate-ping">
+      <i class="fa-solid fa-code"></i>
+      <span class="pl-2 font-bold">I'm Coding...</span>
+    </a>
+    <!-- Título y descripción -->
+  <div 
+  class="absolute bottom-0 left-0 w-full h-[400px] z-10 
+         bg-gradient-to-t from-black to-transparent
+         flex justify-between items-end opacity-100 hover:opacity-0 
+         transition-opacity duration-300 ease-in-out px-6 pb-4 cursor-pointer"
+         @click="playAndFullscreen"
+>
+  <!-- Título y descripción a la izquierda -->
+  <div class="flex flex-col items-start max-w-[70%]">
+    <img src="/video/logo-sky-book.svg" class="pb-2 h-10">
+    <p class="text-sm text-gray-400 font-normal">
+      Sky is a web-based cloud storage tool that allows individuals and organizations to securely store, organize, and share their files, accessible from any device with an internet connection.
+    </p>
   </div>
 
-  <!-- Línea de tiempo 
-  <div class="hidden md:flex relative flex justify-center pt-[100px] lg:pt-20 px-2">
-    <div class="relative w-[90%] lg:w-[65%]">
+  <!-- Botón a la derecha -->
+  <button 
+    @click.stop="toggleVideo" 
+    class="text-xl text-gray-300 rounded hover:text-white"
+  >
+    {{ isPlaying ? '⏸' : '▶' }}
+  </button>
+</div>
 
-      <!-- Botones de iconos 
-      <div
-        v-for="(boton, i) in botones"
-        :key="i"
-        class="flex flex-col-reverse items-center absolute -top-[87px]"
-        :style="{ left: `${boton.posicion}%`, transform: 'translateX(-50%)' }"
-      >
-        <!-- Círculo 
-        <div class="w-4 h-4 rounded-full transition-colors duration-300 bg-[#242424]"></div>
+    <video
+      ref="myVideo"
+      src="/video/sky.mp4"
+      poster="/thumbnails/thumb1.jpg"
+      class="w-full h-full object-cover"
+      muted
+      loop
+      autoplay
+    ></video>
+  </div>
 
-        <!-- Línea vertical 
-        <div class="relative h-[50px]">
-          <div
-            class="w-[1px] bg-[#242424] rounded-t-full absolute bottom-0 transition-all duration-300"
-            :class="currentIndex === boton.index ? 'h-[122px]' : 'h-[40px]'"
-          ></div>
-        </div>
+  <!-- Mitad derecha: contenido -->
+  <div class="flex-1 flex flex-col gap-6">
+    <div class="flex-1 flex flex-row gap-6">
+     <div class="relative flex-1 rounded-xl overflow-hidden group">
+  <!-- Imagen de fondo -->
+  <img
+    src="/thumbnails/thumb2.jpg"
+    class="w-full h-full object-cover"
+    alt="Background"
+  />
 
-        <!-- Ícono 
-        <img
-          :src="boton.icono"
-          alt="Icono de etapa"
-          class="w-8 h-8 transform transition-all duration-200 ease-in-out cursor-pointer hover:scale-150"
-          :class="{
-            'translate-y-[-100px] opacity-0': currentIndex === boton.index,
-            'translate-y-0 opacity-100': currentIndex !== boton.index
-          }"
-          @click="currentIndex = boton.index"
-        />
-      </div>
+  <!-- Contenedor del logo -->
+  <div
+    class="absolute bottom-0 left-0 w-full h-full flex flex-col items-start justify-end bg-gradient-to-t from-black to-transparent p-4 opacity-100 transition-opacity duration-300 group-hover:opacity-0"
+  >
+    <img src="/video/logo-fireweb-book.svg" class="h-8 pb-2" alt="Logo" />
+    <p class="text-sm text-gray-400 font-normal">
+      Fireweb is a tool that makes editing Firestore data simple and intuitive.
+    </p>
+  </div>
 
-      <!-- Línea horizontal 
-      <div class="relative w-full mx-auto mb-20">
-        <div class="h-[6px] bg-[#242424] w-full rounded-full"></div>
-
-        <!-- Marcas y fechas 
-        <div class="absolute top-0 left-0 w-full h-full">
-          <div class="relative w-full h-full">
-            <div
-              v-for="i in totalTicks"
-              :key="i"
-              class="absolute"
-              :style="{ left: `${(i / totalTicks) * 98}%` }"
-            >
-              <!-- Línea vertical
-              <div
-                :class="[
-                  'bg-[#242424] rounded-full',
-                  i % interval === 0 ? 'h-[52px] w-[2px]' : 'h-5 w-[1px]'
-                ]"
-              ></div>
-
-              <!-- Fecha 
-              <div
-                v-if="i % interval === 0"
-                class="absolute top-[25px] text-[10px] sm:text-sm text-[#242424] font-bold text-center leading-none"
-                :style="{ left: '8px' }"
-              >
-                <div>
-                  {{ getYear(i).slice(0, 2) }}<br />
-                  {{ getYear(i).slice(2) }}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+  <!-- Enlace invisible sobre toda el área -->
+  <a
+    href="https://fireweb.digiapps.com.co/"
+    target="_blank"
+    class="absolute inset-0"
+  ></a>
+</div>
+      <div class="flex-1 bg-gray-600 rounded-xl"></div>
     </div>
-  </div> 
-</section> -->
+    <div class="flex-1 flex flex-row gap-4">
+    <div class="flex-1 bg-gray-400 rounded-xl"></div>
+      <div class="flex-1 bg-gray-600 rounded-xl"></div>
+      <div class="flex-1 bg-gray-400 rounded-xl"></div>
+      <div class="flex-1 bg-gray-600 rounded-xl"></div>
 
+    </div>
+  </div>
+</div>
 
-
-
-
+    </section>
 
     <section class="snap-section h-screen">
       <div class="bg-[#E3E3E3] w-full flex flex-col justify-center items-center text-center pt-[150px] lg:pt-[250px] rounded-b-[60px] pb-28 shadow-[0_4px_3px_-1px_#D9D9D9]relative overflow-visible">   
@@ -492,6 +458,70 @@ import gsap from 'gsap';
 import { useI18n } from 'vue-i18n';
 import Gallery from '@/components/Gallery.vue'
 
+
+const myVideo = ref(null)
+const isPlaying = ref(false)
+
+// Reproduce/pausa y activa fullscreen al hacer click en el contenedor
+function playAndFullscreen() {
+  if (!myVideo.value) return
+
+  if (myVideo.value.paused) {
+    myVideo.value.play()
+    isPlaying.value = true
+  } else {
+    myVideo.value.pause()
+    isPlaying.value = false
+  }
+
+  // Solicitar fullscreen si no está activo
+  if (document.fullscreenElement !== myVideo.value) {
+    if (myVideo.value.requestFullscreen) {
+      myVideo.value.requestFullscreen()
+    } else if (myVideo.value.webkitRequestFullscreen) {
+      myVideo.value.webkitRequestFullscreen()
+    } else if (myVideo.value.msRequestFullscreen) {
+      myVideo.value.msRequestFullscreen()
+    }
+  }
+}
+
+function toggleVideo() {
+  if (!myVideo.value) return
+  if (myVideo.value.paused) {
+    myVideo.value.play()
+    isPlaying.value = true
+  } else {
+    myVideo.value.pause()
+    isPlaying.value = false
+  }
+}
+
+function toggleFullScreen() {
+  if (!myVideo.value) return
+  if (myVideo.value.requestFullscreen) {
+    myVideo.value.requestFullscreen()
+  }
+}
+
+function resetToThumbnail() {
+  if (myVideo.value) {
+    myVideo.value.pause()
+    myVideo.value.currentTime = 0
+    isPlaying.value = false
+  }
+}
+
+onMounted(() => {
+  if (!myVideo.value) return
+  // Actualizar el estado isPlaying si el usuario usa controles nativos
+  myVideo.value.addEventListener('play', () => {
+    isPlaying.value = true
+  })
+  myVideo.value.addEventListener('pause', () => {
+    isPlaying.value = false
+  })
+})
 // Botones de navegación con íconos y posición
 const botones = [
   { icono: '/icons/icon_lu.svg', index: 0, posicion: 1.4, iconoY: 10 },
@@ -824,7 +854,22 @@ const duplicatedImages = [...imageList, ...imageList];
 
 <style scoped>
 
-
+  input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-top: -1px; /* centra el thumb */
+}
+input[type="range"]::-moz-range-thumb {
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  cursor: pointer;
+}
   .timeline-wrapper {
     min-height: 100vh; /* Asegura espacio para el componente */
     position: relative;
@@ -872,5 +917,5 @@ const duplicatedImages = [...imageList, ...imageList];
     .snap-section {
       height: 100vh;
     }
-} 
+}
 </style>
